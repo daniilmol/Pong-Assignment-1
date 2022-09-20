@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float colorSpeed = 3f; 
     void Start()
     {
-        //GetComponent<Rigidbody>().velocity = Random.onUnitSphere * 4f;
+        GetComponent<Rigidbody>().velocity = Random.onUnitSphere * 4f;
     }
 
 
