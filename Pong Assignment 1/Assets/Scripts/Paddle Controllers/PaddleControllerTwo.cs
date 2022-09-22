@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PaddleControllerTwo : PaddleController
 {
+    private void Start()
+    {
+        playerID = 2;
+    }
     private void FixedUpdate()
     {
         Vector2 v2 = movement2.ReadValue<Vector2>();

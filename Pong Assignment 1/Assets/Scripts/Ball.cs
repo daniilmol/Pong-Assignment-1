@@ -7,7 +7,24 @@ public class Ball : MonoBehaviour
     [SerializeField] float colorSpeed = 3f; 
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = Random.onUnitSphere * 4f;
+        float yDir = Random.Range(0, 2);
+        if (yDir == 0)
+        {
+            yDir = Random.Range(1, 3);
+        }
+        else if(yDir == 1){
+            yDir = Random.Range(-3, -1);
+        }
+        float xDir = Random.Range(0, 2);
+        if (xDir == 0)
+        {
+            xDir = Random.Range(1, 3);
+        }
+        else if (xDir == 1)
+        {
+            xDir = Random.Range(-3, -1);
+        }
+        GetComponent<Rigidbody>().velocity = new Vector3(xDir, yDir);
     }
 
 
