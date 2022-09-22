@@ -13,7 +13,7 @@ public class PaddleController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ball") {
-            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, -collision.gameObject.transform.position.y * gameObject.GetComponent<Rigidbody>().velocity.y, -collision.gameObject. transform.position.z);
+            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, -collision.gameObject.transform.position.y * Random.Range(3, 4), collision.gameObject.transform.position.z);
         }
     }
     private void reflectBall() { 
