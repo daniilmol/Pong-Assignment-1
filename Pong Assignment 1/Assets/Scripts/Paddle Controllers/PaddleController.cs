@@ -9,6 +9,16 @@ public class PaddleController : MonoBehaviour
     protected InputAction movement;
     protected InputAction movement2;
     protected Rigidbody rb;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball") {
+            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, -collision.gameObject.transform.position.y * gameObject.GetComponent<Rigidbody>().velocity.y, -collision.gameObject. transform.position.z);
+        }
+    }
+    private void reflectBall() { 
+    
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
