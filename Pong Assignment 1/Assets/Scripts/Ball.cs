@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] float colorSpeed = 3f; 
+    [SerializeField] float colorSpeed = 3f;
+    public float ballYLocation = 0;
+
     void Start()
     {
         float yDir = Random.Range(0, 2);
@@ -46,5 +48,7 @@ public class Ball : MonoBehaviour
 
             timeLeft -= Time.deltaTime;
         }
+
+        ballYLocation = transform.position.y;
     }
 }
