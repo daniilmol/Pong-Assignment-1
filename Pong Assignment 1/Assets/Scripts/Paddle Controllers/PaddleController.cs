@@ -9,8 +9,8 @@ public class PaddleController : MonoBehaviour
     protected InputAction movement;
     protected InputAction movement2;
     protected Rigidbody rb;
-    protected int playerID;
-    protected int score = 0;
+    public int playerID;
+    public int score = 0;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ball") {
@@ -48,5 +48,9 @@ public class PaddleController : MonoBehaviour
     public void incrementScore() {
         score++;
         Debug.Log("Player " + playerID + ": " + score);
+    }
+    public int getScore()
+    {
+        return score;
     }
 }
