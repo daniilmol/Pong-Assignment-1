@@ -12,6 +12,8 @@ public class CommandPrompt : MonoBehaviour
     public int goalNumber = 0;
     public GameObject winGoal;
     public GameObject ConditionConfirmButton;
+    public PaddleControllerOne paddleOne;
+    public PaddleControllerTwo paddleTwo;
 
     public void Awake()
     {
@@ -28,7 +30,8 @@ public class CommandPrompt : MonoBehaviour
             //Instantiate(console);
             openConsole();
             Debug.Log("Open");
-            
+            Time.timeScale = 0;
+
         }
 
 
@@ -41,7 +44,7 @@ public class CommandPrompt : MonoBehaviour
         {
             transform.GetChild(a).gameObject.SetActive(true);
         }
-
+        Time.timeScale = 0;
     }
     public void setConditon() {
         goalNumber = int.Parse(winGoal.GetComponent<TMP_InputField>().text);
@@ -49,6 +52,9 @@ public class CommandPrompt : MonoBehaviour
         Debug.Log(goalNumber);
     }
 
+    public int getWinCondition() {
+        return goalNumber;
+    }
     //public void OnConfirmClick() {
     //    ConditionConfirmButton.GetComponent<Button>().onClick.AddListener(() =>
     //    {
@@ -64,6 +70,7 @@ public class CommandPrompt : MonoBehaviour
         {
             transform.GetChild(a).gameObject.SetActive(false);
         }
+        Time.timeScale = 1;
     }
 
 

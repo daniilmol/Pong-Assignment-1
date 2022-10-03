@@ -20,5 +20,6 @@ public class PaddleControllerTwo : PaddleController
         Vector3 v3 = new Vector3(0, v2.y, 0);
         transform.Translate(v3 * 0.05f);
         redScore.text = getScore().ToString();
+        checkWin();
     }
 }
