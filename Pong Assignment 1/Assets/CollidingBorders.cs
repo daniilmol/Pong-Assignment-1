@@ -8,7 +8,7 @@ public class CollidingBorders : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(collision.gameObject.GetComponent<Rigidbody>().velocity.x * Random.Range(2, 3), -collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
+            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(collision.gameObject.GetComponent<Rigidbody>().velocity.x , -collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
         }
     }
 }
