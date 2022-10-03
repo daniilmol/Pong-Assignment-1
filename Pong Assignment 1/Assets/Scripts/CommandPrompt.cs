@@ -14,12 +14,19 @@ public class CommandPrompt : MonoBehaviour
     public GameObject ConditionConfirmButton;
     public PaddleControllerOne paddleOne;
     public PaddleControllerTwo paddleTwo;
+    public GameObject backGround;
+    public GameObject backGroundColorButton;
+    public string color;
 
     public void Awake()
     {
         ConditionConfirmButton.GetComponent<Button>().onClick.AddListener(() =>
         {
             setConditon();
+        });
+        backGroundColorButton.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            setbackGroundColor(color);
         });
 
     }
@@ -54,6 +61,12 @@ public class CommandPrompt : MonoBehaviour
 
     public int getWinCondition() {
         return goalNumber;
+    }
+
+    public void setbackGroundColor(string color) {
+        Color theColor = Color.white;
+        backGround.GetComponent<MeshRenderer>().material.color = theColor;
+    
     }
     //public void OnConfirmClick() {
     //    ConditionConfirmButton.GetComponent<Button>().onClick.AddListener(() =>
