@@ -12,10 +12,9 @@ public class PaddleController : MonoBehaviour
     protected Rigidbody rb;
     public int playerID;
     public int score = 0;
-    public CommandPrompt command;
-    public TextMeshProUGUI winCon;
-    private void OnCollisionEnter(Collision collision)
-    {
+    public int winCondation = 5;
+    public TextMeshProUGUI winMsg;
+    private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Ball") {
             collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
         }
@@ -23,24 +22,20 @@ public class PaddleController : MonoBehaviour
     private void reflectBall() { 
     
     }
-    private void Awake()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody>();
         inputActions = new InputActions();
         movement = inputActions.Paddle.Movement;
         movement2 = inputActions.Paddle.Movement2;
-        Time.timeScale = 0;
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         movement.Enable();
         movement2.Enable();
 
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         movement.Disable();
         movement2.Enable();
     }
@@ -53,23 +48,31 @@ public class PaddleController : MonoBehaviour
         score++;
         Debug.Log("Player " + playerID + ": " + score);
     }
-    public int getScore()
-    {
+    public int getScore() {
         return score;
     }
-    public void checkWin()
-    {
-        if (score >= command.getWinCondition() && score >= 1) {
+    public void changeWinCondation(int n) {
+        if (n >= 1) {
+            winCondation = n;
+        }
+    }
+    public void checkWin() {
+        if (score >= winCondation && score >= 1) {
             Debug.Log(playerID);
             Time.timeScale = 0;
             if (playerID == 1)
             {
-                winCon.GetComponent<TextMeshProUGUI>().text = "Blue Player Wins!";
+                winMsg.GetComponent<TextMeshProUGUI>().text = "Blue Player Wins!";
+                winMsg.enabled = true;
             }
             else {
-                winCon.GetComponent<TextMeshProUGUI>().text = "Red Player Wins!";
+                winMsg.GetComponent<TextMeshProUGUI>().text = "Red Player Wins!";
+                winMsg.enabled = true;
             }
             
         }
+    }
+    public void update() {
+
     }
 }
