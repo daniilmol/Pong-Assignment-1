@@ -7,19 +7,18 @@ using TMPro;
 
 public class PaddleControllerTwo : PaddleController
 {
-    public TextMeshProUGUI redScore;
     private float position;
     private void Start()
     {
         playerID = 2;
         score = 0;
-        redScore.text = 0.ToString();
+        scoreBoard.text = 0.ToString();
     }
     private void FixedUpdate()
     {
         AIControl();
         PlayerControl();
-        redScore.text = getScore().ToString();
+        scoreBoard.text = getScore().ToString();
         checkWin();
     }
 
@@ -27,6 +26,7 @@ public class PaddleControllerTwo : PaddleController
     {
         if (StartGame.sg.singleFlag)
         {
+            movement2.Disable();
             position = FindObjectOfType<Ball>().ballYLocation;
             Vector3 v3 = new Vector3(0, position, 0);
             transform.Translate(v3 * 0.05f);
@@ -37,6 +37,7 @@ public class PaddleControllerTwo : PaddleController
     {
         if (StartGame.sg.mutilFlag)
         {
+            movement2.Enable();
             Vector2 v2 = movement2.ReadValue<Vector2>();
             Vector3 v3 = new Vector3(0, v2.y, 0);
             transform.Translate(v3 * 0.05f);

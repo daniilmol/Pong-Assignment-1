@@ -14,6 +14,7 @@ public class PaddleController : MonoBehaviour
     public int score = 0;
     public int winCondation = 5;
     public TextMeshProUGUI winMsg;
+    public TextMeshProUGUI scoreBoard;
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Ball") {
             collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
@@ -72,7 +73,9 @@ public class PaddleController : MonoBehaviour
             
         }
     }
-
-
-
+    public void ModifyScore(int num)
+    {
+        score = num;
+        scoreBoard.text = getScore().ToString();
+    }
 }

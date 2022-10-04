@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,9 +258,8 @@ MonoBehaviour:
   cmd3: 'p2_score '
   cmd4: 'win_condation '
   BackGround: {fileID: 437611040}
-  PlayerOneScore: 0
-  PlayerTwoScore: 0
-  WinCondition: 0
+  PlayerOne: {fileID: 647787532}
+  PlayerTwo: {fileID: 538785652}
 --- !u!1 &49381012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1007,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1184582455785063459, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184582455785063459, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 1184582455879201136, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
@@ -1047,6 +1056,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184582455879201143, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1184582456287931065, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
@@ -1168,15 +1182,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1184582457155306749, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184582457155306749, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 5558261210215340394, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -200
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 5558261210215340394, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -150
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558261210215340394, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5558261210215340394, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
@@ -1186,7 +1215,7 @@ PrefabInstance:
     - target: {fileID: 5558261210215340394, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7123552367608287854, guid: 9bc76dd8bcd9edb4ca6bebd1310964ef,
         type: 3}
@@ -1201,6 +1230,7 @@ PrefabInstance:
         [score]
 
         win_condation [score]
+
 
         Press Esc to exit console'
       objectReference: {fileID: 0}
@@ -1534,7 +1564,7 @@ MonoBehaviour:
   score: 0
   winCondation: 5
   winMsg: {fileID: 313697362}
-  redScore: {fileID: 1171370662}
+  scoreBoard: {fileID: 1171370662}
 --- !u!1 &581159453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1926,7 @@ MonoBehaviour:
   score: 0
   winCondation: 5
   winMsg: {fileID: 313697362}
-  blueScore: {fileID: 49381014}
+  scoreBoard: {fileID: 49381014}
 --- !u!1 &745132599
 GameObject:
   m_ObjectHideFlags: 0

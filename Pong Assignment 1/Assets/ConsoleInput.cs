@@ -12,9 +12,8 @@ public class ConsoleInput : MonoBehaviour
     public string cmd3 = "p2_score ";
     public string cmd4 = "win_condation ";
     public GameObject BackGround;
-    public int PlayerOneScore;
-    public int PlayerTwoScore;
-    public int WinCondition;
+    public PaddleController PlayerOne;
+    public PaddleController PlayerTwo;
 
     private void ReadInput(string inputText) {
         if (inputText.StartsWith(cmd1)) {
@@ -40,15 +39,16 @@ public class ConsoleInput : MonoBehaviour
 
     public void SetPlayerScore(int id, int score) {
         if (id == 1) {
-            PlayerOneScore = score;
+            PlayerOne.ModifyScore(score);
         }
         if (id == 2) {
-            PlayerTwoScore = score;
+            PlayerTwo.ModifyScore(score);
         }
     }
 
     public void SetWinCondation(int score) {
-        WinCondition = score;
+        PlayerOne.winCondation = score;
+        PlayerTwo.winCondation = score;
     }
 
     // Update is called once per frame
