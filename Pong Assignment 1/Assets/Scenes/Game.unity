@@ -1417,7 +1417,6 @@ GameObject:
   - component: {fileID: 538785647}
   - component: {fileID: 538785651}
   - component: {fileID: 538785652}
-  - component: {fileID: 538785653}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1529,23 +1528,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de73b3d6ed1f59c41a0171e9fa743c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: 2
-  score: 0
-  winCondation: 5
-  winMsg: {fileID: 313697362}
-  redScore: {fileID: 1171370662}
---- !u!114 &538785653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538785646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9210fa3c831ea14f9e46461b09cb55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 2
