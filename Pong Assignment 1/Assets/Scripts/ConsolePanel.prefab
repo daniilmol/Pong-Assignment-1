@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 1184582455831671265}
   m_Father: {fileID: 5558261210215340394}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 178263005057664325}
         m_TargetAssemblyTypeName: CommandPrompt, Assembly-CSharp
-        m_MethodName: exit
+        m_MethodName: ExitConsole
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -511,7 +511,7 @@ RectTransform:
   m_Children:
   - {fileID: 1184582455831133332}
   m_Father: {fileID: 5558261210215340394}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -768,16 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79da2ae0d5cccb4439a71552dd843909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  console: {fileID: 0}
-  win: {fileID: 0}
-  WinCondition: 0
-  winGoal: {fileID: 0}
-  paddleOne: {fileID: 0}
-  paddleTwo: {fileID: 0}
-  BackGround: {fileID: 0}
-  PlayerOneScore: 0
-  PlayerTwoScore: 0
-  color: 
 --- !u!1 &1184582457155306739
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,8 +933,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1184582455879201143}
   - {fileID: 1184582455190156667}
+  - {fileID: 1184582455879201143}
   - {fileID: 2897062758142179743}
   m_Father: {fileID: 1184582456287931071}
   m_RootOrder: 0
