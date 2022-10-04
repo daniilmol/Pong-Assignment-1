@@ -12,7 +12,7 @@ public class SystemController : MonoBehaviour
     private InputAction exit;
 
     private void Awake() {
-        command.enabled = false;
+        command.ExitConsole();
         inputActions = new InputActions();
         console = inputActions.System.Console;
         exit = inputActions.System.Exit;
@@ -30,20 +30,11 @@ public class SystemController : MonoBehaviour
         exit.Disable();
     }
 
-    void PauseGame() {
-        Time.timeScale = 0;
-    }
-
-    void ResumeGame() {
-        Time.timeScale = 1;
-    }
-
     void OnConsole(InputAction.CallbackContext obj) {
-        PauseGame();
-        command.enabled = true;
+        command.OpenConsole();
     }
 
     void OnExit(InputAction.CallbackContext obj) {
-        PauseGame();
+        command.ExitConsole();
     }
 }
