@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PaddleController : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class PaddleController : MonoBehaviour
     protected InputAction movement;
     protected InputAction movement2;
     protected Rigidbody rb;
-    protected int playerID;
-    protected int score = 0;
+    public int playerID;
+    public int score = 0;
+    public CommandPrompt command;
+    public TextMeshProUGUI winCon;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ball") {
-            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, -collision.gameObject.transform.position.y * Random.Range(3, 4), collision.gameObject.transform.position.z);
+            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
         }
     }
     private void reflectBall() { 
@@ -26,6 +29,7 @@ public class PaddleController : MonoBehaviour
         inputActions = new InputActions();
         movement = inputActions.Paddle.Movement;
         movement2 = inputActions.Paddle.Movement2;
+        Time.timeScale = 0;
     }
 
     private void OnEnable()
@@ -48,5 +52,24 @@ public class PaddleController : MonoBehaviour
     public void incrementScore() {
         score++;
         Debug.Log("Player " + playerID + ": " + score);
+    }
+    public int getScore()
+    {
+        return score;
+    }
+    public void checkWin()
+    {
+        if (score >= command.getWinCondition() && score >= 1) {
+            Debug.Log(playerID);
+            Time.timeScale = 0;
+            if (playerID == 1)
+            {
+                winCon.GetComponent<TextMeshProUGUI>().text = "Blue Player Wins!";
+            }
+            else {
+                winCon.GetComponent<TextMeshProUGUI>().text = "Red Player Wins!";
+            }
+            
+        }
     }
 }
