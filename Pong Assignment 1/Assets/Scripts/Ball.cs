@@ -33,7 +33,7 @@ public class Ball : MonoBehaviour
     float timeLeft;
     Color targetColor;
 
-    void Update()
+    void FixedUpdate()
     {
         if (timeLeft <= Time.deltaTime)
         {

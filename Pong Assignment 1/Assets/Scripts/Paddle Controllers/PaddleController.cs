@@ -37,7 +37,7 @@ public class PaddleController : MonoBehaviour
 
     private void OnDisable() {
         movement.Disable();
-        movement2.Enable();
+        movement2.Disable();
     }
 
     public int getPlayerID() {
@@ -72,7 +72,7 @@ public class PaddleController : MonoBehaviour
             
         }
     }
-    public void update() {
 
-    }
+
+
 }

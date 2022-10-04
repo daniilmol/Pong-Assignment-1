@@ -13,6 +13,7 @@ public class PaddleControllerTwo : PaddleController
         if (StartGame.sg.singleFlag)
         {
             disableMultiMode();
+            return;
         }
         playerID = 2;
         score = 0;
