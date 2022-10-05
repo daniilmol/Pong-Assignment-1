@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public bool singleFlag = false;
+    public bool singleFlag = true;
     public bool mutilFlag = false;
     public static StartGame sg;
 
@@ -21,10 +21,12 @@ public class StartGame : MonoBehaviour
     public void setSingleFlag()
     {
         singleFlag = true;
+        mutilFlag = false;
     }
 
     public void setMurilFlag()
     {
         mutilFlag = true;
+        singleFlag = false;
     }
 }

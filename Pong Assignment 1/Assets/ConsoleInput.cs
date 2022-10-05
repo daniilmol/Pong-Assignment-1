@@ -47,8 +47,8 @@ public class ConsoleInput : MonoBehaviour
     }
 
     public void SetWinCondation(int score) {
-        PlayerOne.winCondation = score;
-        PlayerTwo.winCondation = score;
+        PlayerOne.changeWinCondation(score);
+        PlayerTwo.changeWinCondation(score);
     }
 
     // Update is called once per frame

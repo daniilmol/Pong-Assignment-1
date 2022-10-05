@@ -15,6 +15,7 @@ public class PaddleController : MonoBehaviour
     public int winCondation = 5;
     public TextMeshProUGUI winMsg;
     public TextMeshProUGUI scoreBoard;
+    public GameObject backButton;
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Ball") {
             collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-collision.gameObject.transform.position.x, collision.gameObject.transform.position.y, collision.gameObject.transform.position.z);
@@ -70,7 +71,11 @@ public class PaddleController : MonoBehaviour
                 winMsg.GetComponent<TextMeshProUGUI>().text = "Red Player Wins!";
                 winMsg.enabled = true;
             }
-            
+            backButton.SetActive(true);
+            for (int a = 0; a < backButton.transform.childCount; a++)
+            {
+                backButton.transform.GetChild(a).gameObject.SetActive(true);
+            }
         }
     }
     public void ModifyScore(int num)
